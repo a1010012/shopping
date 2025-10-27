@@ -2,14 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* 包含content+padding+border */
 }
+
 .text-ellipsis-2 {
   overflow: hidden;
+  /* 限制文本显示的行数 */
   -webkit-line-clamp: 2;
+  /* 溢出文本用“...”代替 */
   text-overflow: ellipsis;
+  /* 将元素转为WebKit的弹性盒模型，配合line-clamp使用 */
   display: -webkit-box;
+  /* 规定弹性盒的子元素垂直排列（确保文本按行布局） */
   -webkit-box-orient: vertical;
 }
+
 .van-nav-bar .van-nav-bar__arrow {
   color: #333;
 }

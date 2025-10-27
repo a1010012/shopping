@@ -1,6 +1,6 @@
 // 约定一个通用的键名
-const INFO_KEY = 'hm_shopping_info'
-const HISTORY_KEY = 'hm_history_list'
+const INFO_KEY = 'hm_shopping_info'//存储用户个人信息的localStorage键名
+const HISTORY_KEY = 'hm_history_list'//// 存储搜索历史的localStorage键名-
 
 // 获取个人信息
 export const getInfo = () => {

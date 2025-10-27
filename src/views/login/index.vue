@@ -34,6 +34,7 @@
 
 <script>
 import { codeLogin, getMsgCode, getPicCode } from '@/api/login'
+// import {request} from '@/utils/request.js'
 // import { Toast } from
 // vant'
 
@@ -121,16 +122,24 @@ export default {
       }
 
       console.log('发送登录请求')
-
       const res = await codeLogin(this.mobile, this.msgCode)
-      this.$store.commit('user/setUserInfo', res.data)
-      this.$toast('登录成功')
+      // 🌟 关键修复：手动映射后端返回的字段到 { token, userId }
+      // 请根据后端实际返回字段名修改（例如后端返回 access_token 和 user_id）
+     const userInfo = {
+     token: res.data.token ||'', // 后端 token 字段名（必须确认！）
+     userId: res.data.userId || '' // 后端 userId 字段名（必须确认！）
+  }// 提交到 Vuex（此时 userInfo 一定包含 token 和 userId）
+  this.$store.commit('user/setUserInfo', userInfo)
+  this.$toast('登录成功')
 
       // 进行判断，看地址栏有无回跳地址
       // 1. 如果有   => 说明是其他页面，拦截到登录来的，需要回跳
       // 2. 如果没有 => 正常去首页
+
+      
       const url = this.$route.query.backUrl || '/'
       this.$router.replace(url)
+      console.log('后端登录接口返回数据:', res.data)
     }
   },
   // 离开页面清除定时器

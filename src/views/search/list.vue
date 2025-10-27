@@ -3,7 +3,7 @@
     <van-nav-bar
   title="商品列表"
   left-arrow
-  @click-left="$route.go(-1)"
+  @click-left="$router.go(-1)"
 />
 <van-search readonly
  shape="round" 
@@ -50,19 +50,19 @@ export default {
   },
   async created(){
     const{data:{list}}=await getProList({
-      CategoryId:this.$route.query.CategoryId,
+      categoryId:this.$route.query.categoryId,
       goodsName:this.querySearch,
       page:this.page,
     })
     this.proList=list.data;
-    console.log(list);
+    console.log(this.proList);
   }
 }
 </script>
 
 <style lang="less" scoped>
 .search{
-  padding-top:46px;
+  padding-top:10px;
   ::v-deep .van-icon-arrow-left{
     color:#333;
   }

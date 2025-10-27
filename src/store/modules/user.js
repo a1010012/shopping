@@ -5,7 +5,7 @@ export default {
     // 开启了命名空间，确保模块内的 mutations/ actions / getters 不会与其他模块或根状态冲突。
     namespaced: true,
     state() {
-        //提供数据
+        //提供数据 
         // 定义模块内的 局部状态（仅当前模块可直接访问，其他模块需通过 rootState 间接访问）。
         return {
             userInfo: getInfo()
@@ -31,11 +31,6 @@ export default {
     getters: {
         //提供基于state出来的派生属性
         // 定义 计算属性，用于派生模块内的状态（类似组件的 computed，缓存结果，依赖变化时自动更新）。
-        token(state) {
-            return state.userInfo.token // ✅ 正确路径：从 userInfo 中获取 token
-        },
-        userId(state) {
-            return state.userInfo.userId
-        }
+
     }
 }

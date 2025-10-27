@@ -3,7 +3,7 @@
     <van-nav-bar
   title="商品搜索"
   left-arrow
-  @click-left="$roueter.go(-1)"
+  @click-left="$router.go(-1)"
 />
 <van-search v-model="search" show-action placeholder="请输入搜索关键词" clearable>
   <template #action>
@@ -102,6 +102,10 @@ export default {
     white-space: nowrap;//防止换行
     text-overflow: ellipsis;//超出部分显示省略号
     margin-bottom: 10px;
+    margin-right:10px;
+    ::v-deep{
+      display: inline-block;
+    }
   }
 }
 </style>

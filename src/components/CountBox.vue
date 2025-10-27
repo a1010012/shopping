@@ -8,6 +8,7 @@
 
 <script>
 export default{
+    // 父传子
     props:{
         value:{
             type:Number,

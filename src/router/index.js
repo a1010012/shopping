@@ -54,7 +54,7 @@ router.beforeEach((to, from, next) => {
     return
   }
   //为权限界面，需要判断token
-  const token = store.getters['user/token']
+  const token = store.getters.token
   console.log('路由守卫中的 token:', token) // ✅ 现在会正确打印 localStorage 中的 token
   if (token) {
     next()

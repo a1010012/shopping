@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Tabbar, TabbarItem, NavBar, Toast, Search, Swipe, SwipeItem, Grid, GridItem, Icon, Rate, ActionSheet } from 'vant'
+import { Tabbar, TabbarItem, NavBar, Toast, Search, Swipe, SwipeItem, Grid, GridItem, Icon, Rate, ActionSheet, Dialog, Checkbox, CheckboxGroup, Tab, Tabs } from 'vant'
 import 'vant/lib/index.css';
 
 Vue.use(Tabbar)
@@ -14,3 +14,8 @@ Vue.use(GridItem)
 Vue.use(Icon)
 Vue.use(Rate)
 Vue.use(ActionSheet)
+Vue.use(Dialog)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Tab)
+Vue.use(Tabs)
